@@ -16,7 +16,7 @@ namespace JassPro.DAL
     /// </summary>
     public class DbHelper
     {
-        private static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Jewelry_Sql"].ConnectionString;
+        private static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
         /// <summary>
         /// 执行存储过程
         /// </summary>

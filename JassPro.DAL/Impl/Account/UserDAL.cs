@@ -209,6 +209,7 @@ namespace JassPro.DAL.Impl.Account
         {
             using (HContext dbContext = new HContext())
             {
+                IList<UserModel> userList = dbContext.Users.Where(a => a.Status != 1).ToList();
                 return dbContext.Users.Include("Roles").Include("Roles.Menus").Where(a => a.Status != 1).ToList();
             }
         }

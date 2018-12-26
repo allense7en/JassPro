@@ -13,7 +13,7 @@ namespace JassPro.DAL
     public class BaseContext : DbContext
     {
         public BaseContext() :
-            base("Jewelry_Sql")
+            base("connString")
         {
 
         }
