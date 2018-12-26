@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 namespace JassPro.Model.Account
 {
     [Serializable]
-    [DataContract]
+    //[DataContract]
     [Table("system_role")]
     public class RoleModel
     {
@@ -20,35 +20,35 @@ namespace JassPro.Model.Account
         }
 
 
-        [DataMember(Order = 1)]
+        //[DataMember(Order = 1)]
         [Column("id")]
         public int Id { get; set; }
 
         /// <summary>
         /// 角色名称
         /// </summary>
-        [DataMember(Order = 2)]
+        //[DataMember(Order = 2)]
         [Column("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// 角色编号
         /// </summary>
-        [DataMember(Order = 3)]
+        //[DataMember(Order = 3)]
         [Column("code")]
         public string Code { get; set; }
 
         /// <summary>
         /// 备注
         /// </summary>
-        [DataMember(Order = 4)]
+        //[DataMember(Order = 4)]
         [Column("description")]
         public string Description { get; set; }
 
         /// <summary>
         /// 状态(0:正常,1:停用)
         /// </summary>
-        [DataMember(Order = 5)]
+        //[DataMember(Order = 5)]
         [Column("status")]
         public int Status { get; set; }
 
@@ -59,7 +59,7 @@ namespace JassPro.Model.Account
         [JsonIgnore]
         public IList<UserModel> Users { get; set; }
 
-        [DataMember(Order = 6)]
+        //[DataMember(Order = 6)]
         public IList<MenuModel> Menus { get; set; }
     }
 }

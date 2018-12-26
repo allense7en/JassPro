@@ -11,12 +11,7 @@ namespace JassPro.Model.Log
     [Table("system_operate_log")]
     public class OperateLogModel : BaseModel
     {
-        [Column("join_id")]
-        public int JoinId { get; set; }
-
-        [Column("join_name")]
-        public string JoinName { get; set; }
-
+        
         [Column("store_id")]
         /// <summary>
         /// 店铺id
@@ -55,8 +50,7 @@ namespace JassPro.Model.Log
     }
 
     public class OperateLogRequest : BaseQueryModel
-    {
-        public int JoinId { get; set; }
+    {        
         public int StoreId { get; set; }
 
         public int UserId { get; set; }

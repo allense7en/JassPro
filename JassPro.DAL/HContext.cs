@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using JassPro.DAL.Extension;
 using JassPro.Model;
 using JassPro.Model.Account;
+using JassPro.Model.Log;
 
 namespace JassPro.DAL
 {
@@ -29,6 +30,11 @@ namespace JassPro.DAL
         /// 菜单
         /// </summary>
         public DbSet<MenuModel> Menus { get; set; }
+
+        /// <summary>
+        /// 操作日志
+        /// </summary>
+        public DbSet<OperateLogModel> OperateLogs { get; set; }
         #endregion
 
 
