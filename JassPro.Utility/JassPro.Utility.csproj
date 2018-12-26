@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DevDoc\jasspro.sql" />
+    <Content Include="DevDoc\jewelryapi.sql" />
+    <Content Include="lib\Autofac.Mvc5.3.3.4\Autofac.Integration.Mvc.dll" />
+    <Content Include="lib\Autofac.Mvc5.3.3.4\Autofac.Integration.Mvc.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
