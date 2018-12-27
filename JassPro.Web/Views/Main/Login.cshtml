@@ -1,6 +1,6 @@
 ﻿@model JassPro.Model.Account.UserModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "JASS-登录";
 }
 
 
@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>JASS</title>
+    <title>JASS-登录</title>
     <meta name="keywords" content="Jass后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
     <meta name="description" content="Jass是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
     <link rel="shortcut icon" href="favicon.ico">
@@ -34,19 +34,39 @@
             <h3>欢迎使用 JASS</h3>
             @using (Html.BeginForm("UserLogin", "Main", FormMethod.Post, new { @class = "form-horizontal", id = "loginFormPhone", name = "loginFormPhone", onsubmit = "return Login.login2()" }))
             {
-                <form class="m-t" role="form" action="">
-                    <div class="form-group">
-                        <input type="text" id="username" value="@Model.UserName" class="form-control" name="username" placeholder="用户名">
+            <form class="m-t" role="form" action="">
+                <div class="form-group" style="margin-left:auto;">
+                    <input type="text" id="username" style="width:315px;" value="@Model.UserName" class="form-control" name="username" placeholder="用户名">
+                </div>
+                <div class="form-group" style="margin-left:auto;">
+                    <input type="password" id="password" style="width:315px;" value="@Model.Password" class="form-control" name="password" placeholder="密码">
+                </div>
+                @using JassPro.Model.Account
+                @if (Model.ErrorCode == -2)
+                {
+                    <!-- 错误div -->
+                    <div class="error_border">
+                        <div class="error_div errorShow" id="error_div">
+                            <span class="text-left eng-error" style="color:red;">
+                                登录失败:用户不存在/密码错误
+                            </span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" id="password" value="@Model.Password" class="form-control"name="password" placeholder="密码">
+                }
+                else
+                {
+                    <!-- 错误div -->
+                    <div class="error_border">
+                        <div class="error_div errorShow" id="error_div">
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                }
+                <button type="submit" id="submitForm" onclick="return Login.doLogin()" class="btn btn-primary block full-width m-b">登 录</button>
 
-                    @*<p class="text-muted text-center">
-                        <a href="#"><small>忘记密码了？</small></a> | <a href="#">注册一个新账号</a>
-                    </p>*@
-                </form>
+                @*<p class="text-muted text-center">
+            <a href="#"><small>忘记密码了？</small></a> | <a href="#">注册一个新账号</a>
+        </p>*@
+            </form>
             }
 
         </div>

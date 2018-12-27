@@ -306,6 +306,7 @@
     <Content Include="static\css\bootstrap.min.css" />
     <Content Include="static\css\bootstrap.min14ed.css" />
     <Content Include="static\css\demo\webuploader-demo.min.css" />
+    <Content Include="static\css\font-awesome.min.css" />
     <Content Include="static\css\font-awesome.min93e3.css" />
     <Content Include="static\css\login.min.css" />
     <Content Include="static\css\patterns\header-profile-skin-1.png" />
@@ -543,6 +544,8 @@
     <Content Include="static\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
     <Content Include="static\plugins\fullavatareditor\scripts\swfobject.js" />
     <Content Include="static\plugins\fullavatareditor\scripts\test.js" />
+    <Content Include="upload\userimg\admin1.jpg" />
+    <Content Include="upload\userimg\admin.jpg" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -590,6 +593,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Main\IndexContext.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

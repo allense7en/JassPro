@@ -73,15 +73,17 @@ namespace JassPro.Web.Controllers.Account
             ViewBag.RealName = CurrentAdmin.UserInfo.RealName;
             ViewBag.StoreId = CurrentAdmin.UserInfo.StoreId;
             ViewBag.StoreName = CurrentAdmin.UserInfo.StoreName;
+            ViewBag.Cover = CurrentAdmin.UserInfo.Cover;
+            ViewBag.RoleName = CurrentAdmin.UserInfo.Roles.FirstOrDefault().Name;
             return View(menuList);
         }
 
 
 
-        [Description("导航页")]
+        [Description("主页")]
         [ViewUI]
         [AuthorizeIgnore]
-        public ActionResult NavPage()
+        public ActionResult IndexContext()
         {
             return View();
         }
