@@ -229,6 +229,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\Account\MainController.cs" />
+    <Compile Include="Controllers\Basic\UserManagerController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -260,6 +261,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\Account\User.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -408,6 +410,7 @@
     <Content Include="static\img\success.png" />
     <Content Include="static\img\user.png" />
     <Content Include="static\img\wenku_logo.png" />
+    <Content Include="static\js\ajaxfileupload.js" />
     <Content Include="static\js\bootstrap.min.js" />
     <Content Include="static\js\contabs.min.js" />
     <Content Include="static\js\content.min.js" />
@@ -540,6 +543,7 @@
     <Content Include="static\js\plugins\webuploader\index.html" />
     <Content Include="static\js\plugins\webuploader\webuploader.min.js" />
     <Content Include="static\js\welcome.min.js" />
+    <Content Include="static\logo.ico" />
     <Content Include="static\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
     <Content Include="static\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
     <Content Include="static\plugins\fullavatareditor\scripts\swfobject.js" />
@@ -593,9 +597,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Main\IndexContext.cshtml" />
+    <Content Include="Views\Main\UploadCover.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UserManager\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

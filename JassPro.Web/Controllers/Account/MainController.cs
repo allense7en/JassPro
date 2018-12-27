@@ -80,13 +80,23 @@ namespace JassPro.Web.Controllers.Account
 
 
 
-        [Description("主页")]
+        [Description("主页内容")]
         [ViewUI]
         [AuthorizeIgnore]
         public ActionResult IndexContext()
         {
             return View();
         }
+
+
+        [Description("头像上传")]
+        [ViewUI]
+        [AuthorizeIgnore]
+        public ActionResult UploadCover()
+        {
+            return View();
+        }
+
 
         [Description("用户登陆")]
         [VJsonResult]
@@ -225,6 +235,53 @@ namespace JassPro.Web.Controllers.Account
             return RedirectToAction("Login");
         }
 
+        [Description("员工头像上传")]
+        [VJsonResult]
+        [AuthorizeIgnore]
+        public ActionResult UploadUserImage()
+        {
+            HttpPostedFileBase image = Request.Files[0];
+            //保存路径
+            string folder = "/upload/userimg/",
+                //服务器路径
+                absFolder = Server.MapPath(folder),
+                extends = image.FileName.Substring(image.FileName.LastIndexOf('.') + 1),
+                fileName = Guid.NewGuid().ToString() + "." + extends;
 
+            //ImageHelper iHelper = new ImageHelper();
+            //iHelper.CreateSmallPhoto(image.FileName, 90, 90, "/upload/SmallgoodsStyleImage/");
+            if (!System.IO.Directory.Exists(absFolder))
+            {
+                System.IO.Directory.CreateDirectory(absFolder);
+            }
+
+            image.SaveAs(absFolder + fileName);
+            System.Drawing.Bitmap objPic, objNewPic;
+
+            try
+            {
+                objPic = new System.Drawing.Bitmap(absFolder + fileName);
+                objNewPic = new System.Drawing.Bitmap(objPic, 480, 480);
+                string sThumbFile = "thumb_" + System.IO.Path.GetFileNameWithoutExtension(fileName);
+                string smallImage = System.Web.HttpContext.Current.Server.MapPath(folder) + sThumbFile;
+                objNewPic.Save(smallImage + ".jpg");
+            }
+            catch (Exception exp)
+            {
+
+                throw exp;
+            }
+            finally
+            {
+                objPic = null;
+                objNewPic = null;
+            }
+
+            //string extendsuo = smallImagePath.Substring(smallImagePath.LastIndexOf('.') + 1);
+            //string suofileName = Guid.NewGuid().ToString() + "." + extendsuo;
+            //HttpPostedFileBase imagesuo = new HttpPostedFile();
+            //imagesuo.SaveAs(folder + suofileName);            
+            return Json(new VResult() { success = true, msg = folder + fileName });
+        }
     }
 }

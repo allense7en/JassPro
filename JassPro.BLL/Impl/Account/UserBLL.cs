@@ -129,7 +129,10 @@ namespace JassPro.BLL.Impl.Account
             return _UserDAL.DeleteUser(users);
         }
 
-        
+        public bool UpdateUserCover(UserModel user)
+        {            
+            return _UserDAL.UpdateUserCover(user);
+        }
 
         //public bool ClearMemberCached()
         //{

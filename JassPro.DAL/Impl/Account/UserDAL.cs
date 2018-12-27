@@ -232,6 +232,16 @@ namespace JassPro.DAL.Impl.Account
             }
         }
 
+        public bool UpdateUserCover(UserModel user)
+        {
+            using (HContext dbContext = new HContext())
+            {                
+                UserModel model = dbContext.Users.Where(a => a.Id == user.Id).FirstOrDefault();
+                model.Cover = user.Cover;
+                return dbContext.SaveChanges() > 0;
+            }
+        }
+
     }
         
 }

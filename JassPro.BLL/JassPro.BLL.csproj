@@ -67,5 +67,9 @@
       <Name>JassPro.Utility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Impl\Basic\" />
+    <Folder Include="Interface\Basic\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

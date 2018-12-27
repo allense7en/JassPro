@@ -32,8 +32,10 @@ namespace JassPro.BLL.Interface.Account
 
         bool DeleteUser(IList<UserModel> users);
 
-        
+
         //bool ClearMemberCached();
+
+        bool UpdateUserCover(UserModel user);
 
     }
 }

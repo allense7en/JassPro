@@ -30,5 +30,7 @@ namespace JassPro.DAL.Interface.Account
 
         bool DeleteUser(IList<UserModel> users);
 
+        bool UpdateUserCover(UserModel user);
+
     }
 }
