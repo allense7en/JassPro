@@ -544,7 +544,6 @@
     <Content Include="static\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
     <Content Include="static\plugins\fullavatareditor\scripts\swfobject.js" />
     <Content Include="static\plugins\fullavatareditor\scripts\test.js" />
-    <Content Include="upload\userimg\admin1.jpg" />
     <Content Include="upload\userimg\admin.jpg" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
