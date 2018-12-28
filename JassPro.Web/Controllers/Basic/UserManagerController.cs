@@ -28,8 +28,9 @@ namespace JassPro.Web.Controllers.Basic
 
         [Description("修改头像")]
         [VJsonResult]
-        public ActionResult UpdateUserCover(string ImgSrc)
+        public ActionResult UpdateUserCover()
         {
+            string ImgSrc = Request["srcStr"];
             UserModel user = CurrentAdmin.UserInfo;
             user.Cover = ImgSrc;
             bool flag = _UserBLL.UpdateUserCover(user);
@@ -45,7 +46,7 @@ namespace JassPro.Web.Controllers.Basic
                 log.Description = GetAddOrUpdateMessage("修改") + "账户【" + user.RealName + "】头像" + GetSuccessOrFailureMessage(user.ErrorCode, user.ErrorMsg);
                 _UserBLL.InsertOperateLog(log);
             }
-            return Json(new VResult() { success = !user.IsError, msg = user.ErrorMsg });
+            return Json(new VResult() { success = flag, msg = user.ErrorMsg, name = user.Cover });
         }
 
     }
